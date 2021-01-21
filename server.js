@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 // set up the express app for data Handling
 app.use(express.urlencoded({ extended: true }));
-app.use(json());
+app.use(express.json());
 
 // connect to the database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
