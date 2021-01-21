@@ -1,5 +1,8 @@
+// dependencies
 const path = require("path");
+const router = require("express").Router();
 
+// html Routes
 module.exports = (app) => {
   // index route
   app.get("/", (req, res) => {
