@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
-require("dontenv").config();
+require("dotenv").config();
 
 //port
 //port.env.PORT lets the port be set by HEROKU
@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(json());
 
 // connect to the database
-mongoose.connect(process.env.MONGODB_URI || "", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
